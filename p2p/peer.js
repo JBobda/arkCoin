@@ -10,6 +10,12 @@ class node{
         });
 
         //Instantiating receiving requests
+        this.peer.handle.getCustomMessage = (data, done) => {
+            console.log("Data recieved: ");
+            console.log(data);
+            done(null);
+        };
+
         this.peer.handle.getTestMessage = (data, done) => {
             console.log("Data recieved: ");
             console.log(data);
@@ -35,10 +41,25 @@ class node{
         console.log(this.peer.status());
     }
 
+    //Action functions
+
+    sendCustomMessage(dataObject){
+        let data = dataObject;
+        this.peer.remote(
+            this.peerSelected
+        ).run('handle/getCustomMessage', data, (err, result) => {
+            if(err != null){
+                console.log(err);
+            }
+            else{
+                console.log("<<---Data is sent to " + this.peerSelected.host+ ":" + this.peerSelected.port+"--->>");
+            }
+        });
+    }
     sendTestMessage(){
         this.peer.remote(
             this.peerSelected
-        ).run('handle/getTestMessage', { data: 'value' }, (err, result) => {
+        ).run('handle/getTestMessage', { data: 'test value' }, (err, result) => {
             if(err != null){
                 console.log(err);
             }
