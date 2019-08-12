@@ -4,7 +4,7 @@
   "description": "Working on sockets",
   "main": "index.js",
   "scripts": {
-    "test": "concurrently \"node ./peer_testing/peer2\" \"node ./peer_testing/peer1\""
+    "test": "concurrently \"node ./peer_testing/peer0\" \"node ./peer_testing/peer1\""
   },
   "author": "",
   "license": "ISC",
