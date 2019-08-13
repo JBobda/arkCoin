@@ -1,0 +1,17 @@
+{
+  "name": "testp2p",
+  "version": "1.0.0",
+  "description": "Working on sockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "concurrently \"node ./peer_testing/peer0\" \"node ./peer_testing/peer1\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.1",
+    "install": "^0.13.0",
+    "npm": "^6.10.3",
+    "p2p": "^0.10.2"
+  }
+}
