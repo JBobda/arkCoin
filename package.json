@@ -11,7 +11,7 @@
   "dependencies": {
     "concurrently": "^4.1.1",
     "install": "^0.13.0",
-    "npm": "^6.10.3",
+    "npm": "^6.13.4",
     "p2p": "^0.10.2"
   }
 }
